@@ -10,7 +10,7 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class AppTest {
     public String getGreeting() {
-        return "Hello";
+        return "Hlo";
     }
 
 }
