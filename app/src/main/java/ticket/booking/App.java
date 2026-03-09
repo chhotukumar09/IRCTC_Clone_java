@@ -14,6 +14,7 @@ import java.util.*;
 public class App {
 
     public static void main(String[] args) {
+
         System.out.println("Runnign Train Booking System");
         Scanner scanner = new Scanner(System.in);
         int option = 0;
@@ -21,7 +22,7 @@ public class App {
         try {
             userBookingServices = new UserBookingServices();
         }catch (IOException ex){
-            System.out.println("These is somthing wrong");
+            ex.printStackTrace();
             return;
         }
         while (option != 7){
@@ -65,7 +66,7 @@ public class App {
                     String source = scanner.next();
                     System.out.println("Type your destination station");
                     String dest = scanner.next();
-                    List<Train> trains = userBookingServices.getTrains(source, dest);
+                    List<Train> trains = userBookingServices.getTrains(source.toUpperCase(), dest.toLowerCase());
                     int index = 1;
                     for (Train t : trains){
                         System.out.println(index+"Train id : "+t.getTrainId());
@@ -74,7 +75,7 @@ public class App {
                         }
                     }
                     System.out.println("Select a train by typing 1,2,3....");
-                    trainSelectedforBooking =trains.get(scanner.nextInt());
+                    trainSelectedforBooking =trains.get(scanner.nextInt()-1);
                     break;
                 case 5:
                     System.out.println("Select a seat out of these seats");

@@ -16,7 +16,7 @@ import java.util.stream.IntStream;
 public class TrainServices {
     private List<Train> trainList;
     private ObjectMapper objectMapper = new ObjectMapper();
-    public static final String TRAIN_BD_PATH= "../LocalDB/User.json";
+    private static final String TRAIN_BD_PATH= "src/main/java/ticket/booking/LocalDB/trains.json";
 
     public TrainServices() throws IOException{
         File users = new File(TRAIN_BD_PATH);
